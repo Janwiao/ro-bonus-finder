@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RO Bonus 查詢</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>RO Bonus 查詢</h1>
+    <div class="controls">
+      <input id="q" type="text" placeholder="輸入 bStr / 力量 / aspd…" />
+      <select id="cat">
+        <option value="">分類：全部</option>
+      </select>
+      <label class="chk">
+        <input id="full" type="checkbox" />
+        全域搜尋（名稱＋說明）
+      </label>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="table-wrap">
+      <table class="grid" id="tbl">
+        <thead>
+          <tr>
+            <th style="width:72px">ID</th>
+            <th>指令 / 名稱</th>
+            <th>效果說明</th>
+            <th style="width:140px">分類</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div id="empty" class="empty">沒有符合的結果</div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span id="count">0</span> 筆
+  </footer>
+
+  <script src="bonus.js"></script>
+  <script>
+    // —— 資料準備 ——
+    const data = (typeof BONUSES !== "undefined" ? BONUSES : []).map((it, i) => ({
+      id: it.id ?? (i + 1),
+      name: it.name || "",
+      desc: it.desc || "",
+      category: it.category || ""
+    }));
+
+    // 自動填分類
+    const cats = [...new Set(data.map(d => d.category).filter(Boolean))].sort();
+    const catSel = document.querySelector("#cat");
+    cats.forEach(c => {
+      const opt = document.createElement("option");
+      opt.value = c; opt.textContent = c;
+      catSel.appendChild(opt);
+    });
+
+    // 篩選
+    const q = document.querySelector("#q");
+    const full = document.querySelector("#full");
+    const tbody = document.querySelector("#tbody");
+    const empty = document.querySelector("#empty");
+    const count = document.querySelector("#count");
+
+    const norm = s => (s || "").toString().toLowerCase().trim();
+    const highlight = (text, kw) => {
+      if (!kw) return text;
+      const re = new RegExp("(" + kw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig");
+      return text.replace(re, '<mark>$1</mark>');
+    };
+
+    function render(rows, kw) {
+      tbody.innerHTML = "";
+      rows.forEach(r => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${r.id}</td>
+          <td class="mono">${highlight(r.name, kw)}</td>
+          <td>${highlight(r.desc, kw)}</td>
+          <td>${r.category || "-"}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+      empty.style.display = rows.length ? "none" : "block";
+      count.textContent = rows.length;
+    }
+
+    function applyFilter() {
+      const kw = norm(q.value);
+      const cat = catSel.value;
+      let rows = data;
+
+      if (cat) rows = rows.filter(r => r.category === cat);
+      if (kw) {
+        rows = rows.filter(r => {
+          const inName = norm(r.name).includes(kw);
+          const inDesc = norm(r.desc).includes(kw);
+          return full.checked ? (inName || inDesc) : inName;
+        });
+      }
+      render(rows, kw);
+    }
+
+    // 事件
+    let t = 0;
+    q.addEventListener("input", () => { clearTimeout(t); t = setTimeout(applyFilter, 120); });
+    catSel.addEventListener("change", applyFilter);
+    full.addEventListener("change", applyFilter);
+
+    // 首次渲染
+    applyFilter();
+  </script>
+</body>
+</html>
