@@ -68,7 +68,7 @@
     const empty = document.querySelector("#empty");
     const count = document.querySelector("#count");
 
-    const norm = s => (s || "").toString().toLowerCase().trim();
+    const norm = s => (s || "").toString().normalize('NFKC').trim();
     const highlight = (text, kw) => {
       if (!kw) return text;
       const re = new RegExp("(" + kw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig");
