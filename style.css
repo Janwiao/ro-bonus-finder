@@ -6,172 +6,247 @@
   --muted: #9ca3af;
   --accent: #58a6ff;
   --mark: #f9e2af;
-  --blur-bg: rgba(17, 25, 40, 0.55);
+  --font-sm: 14px;
+  --font-md: 15px;
+  --radius: 10px;
 }
-* {
-  box-sizing: border-box;
-}
+/*
+紧湊科技風	13px / 14px	元件更細，像工具介面
+標準風格	14px / 15px	現在這樣
+放大閱讀風	15px / 16px	元件更大、更顯眼
+*/
+/* 共用設定 */
+* { box-sizing: border-box; }
 html, body {
   height: 100%;
+  margin: 0;
   font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+  font-size: var(--font-md);
   background: var(--bg);
   color: var(--text);
-  margin: 0;
+  animation: fadeBg 1.2s ease forwards;
 }
 
-/* 頂部導覽列 */
+/* 頂部搜尋列 */
 .topbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(14px);
-  background: linear-gradient(180deg, rgba(17,25,40,0.9), rgba(17,25,40,0.5));
-  border-bottom: 1px solid var(--border);
+  width: 88%;
+  max-width: 960px;
+  margin: 48px auto 16px;
   padding: 14px 18px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
 }
 .topbar h1 {
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
-  letter-spacing: .4px;
   background: linear-gradient(90deg, #3b82f6, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* 搜尋區塊 */
 .controls {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
-  flex: 1 1 520px;
+  flex: 1 1 500px;
 }
 .controls input[type="text"] {
   flex: 1;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border);
   color: var(--text);
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius);
   outline: none;
-  transition: all .2s ease;
-  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  font-size: var(--font-sm);
 }
 .controls input[type="text"]:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 12px rgba(88,166,255,0.3);
+  box-shadow: 0 0 6px rgba(88, 166, 255, 0.4);
 }
-.controls select {
-  background: rgba(255,255,255,0.05);
+
+/* 下拉選單 */
+.select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.select-wrap select {
+  min-width: 140px;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border);
   color: var(--text);
-  padding: 10px 14px;
-  border-radius: 10px;
-  transition: .2s;
+  padding: 8px 32px 8px 12px;
+  border-radius: var(--radius);
+  outline: none;
+  transition: 0.25s ease;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  font-size: var(--font-sm);
+  appearance: none;
 }
-.controls select:hover {
+.select-wrap select:hover {
   border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(88, 166, 255, 0.3);
 }
+.select-wrap .arrow {
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  color: var(--accent);
+  opacity: 0.8;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.select-wrap:hover .arrow {
+  transform: translateY(2px);
+  opacity: 1;
+}
+.select-wrap select option {
+  background-color: rgba(17, 25, 40, 0.95);
+  color: #e6edf3;
+}
+.select-wrap select option:hover,
+.select-wrap select option:checked {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+/* Checkbox */
 .chk {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   color: var(--muted);
+  font-size: var(--font-sm);
 }
 
-/* 主體內容 */
-.container {
-  padding: 20px 16px 60px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* 表格區域 */
+/* 讓內容自動撐開，footer 仍保持底部 */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+.container {
+  width: 88%;
+  max-width: 960px;
+  margin: 0 auto 20px;  /* 縮短下方留白 */
+  flex: 1;              /* 填滿可用空間 */
+  animation: slideUp 0.6s ease forwards;
+}
+
+footer.footer {
+  margin-top: auto;     /* 永遠貼底 */
+}
+
 .table-wrap {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 0 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
 }
 
 /* 表格 */
-.grid {
-  width: 100%;
-  border-collapse: collapse;
-}
+.grid { width: 100%; border-collapse: collapse; }
 .grid thead th {
   text-align: left;
   font-weight: 600;
   color: #cbd5e1;
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
   border-bottom: 1px solid var(--border);
-  padding: 12px 14px;
+  padding: 10px 12px;
+  font-size: var(--font-sm);
 }
 .grid tbody td {
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 10px 12px;
+  font-size: var(--font-sm);
   color: var(--text);
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 .grid tbody tr:hover {
-  background: rgba(88,166,255,0.08);
+  background: rgba(88, 166, 255, 0.08);
+  box-shadow: inset 0 0 6px rgba(88, 166, 255, 0.3);
 }
 .grid .mono {
   font-family: ui-monospace, Menlo, Consolas, monospace;
 }
 
-/* 空結果模糊提示 */
+/* 沒有結果 */
 .empty {
   display: none;
   text-align: center;
   color: var(--muted);
-  font-size: 15px;
-  padding: 40px 0;
-  position: relative;
-  backdrop-filter: blur(15px);
-  background: rgba(255,255,255,0.03);
-  animation: fadeIn .4s ease forwards;
+  font-size: var(--font-sm);
+  padding: 30px 0;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.03);
   border-top: 1px solid var(--border);
-}
-@keyframes fadeIn {
-  from { opacity: 0; filter: blur(5px); }
-  to { opacity: 1; filter: blur(0); }
+  animation: fadeIn 0.4s ease forwards;
 }
 
 /* 底部統計 */
 footer.footer {
+  
   color: var(--muted);
   border-top: 1px solid var(--border);
-  padding: 10px 16px;
-  text-align: right;
-  background: rgba(255,255,255,0.03);
+  padding: 8px 14px; /* 🔹 縮小底部空間 */
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: var(--font-sm);
+  /*height: 32px;                   🔹 可以強制設定高度（選用） */
 }
 
-/* 搜尋高亮 */
+/* 簽名優化（自然跟隨頁面底部） */
+.credit {
+  position: static; /* ❗ 改回自然流動 */
+  display: block;
+  text-align: right; /* 文字靠右 */
+  margin-right: 20px; /* 與右邊保留距離 */
+  font-size: 15px;
+  color: rgba(215, 180, 210, 0.75);
+  text-shadow: 0 0 6px rgba(88, 166, 255, 0.35);
+  transition: all .3s ease;
+  letter-spacing: 0.3px;
+}
+
+.credit:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(88, 166, 255, 0.6);
+}
+
+
+/* 高亮 */
 mark {
   background: var(--mark);
   color: #1f2937;
-  padding: 0 .15em;
+  padding: 0 0.15em;
   border-radius: 2px;
 }
 
-/* RWD */
+/* 動畫 */
+@keyframes fadeIn { from { opacity: 0; filter: blur(4px); } to { opacity: 1; filter: blur(0); } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeBg { from { opacity: 0; } to { opacity: 1; } }
+.fade-in { animation: fadeIn 1s ease forwards; }
+
 @media (max-width: 720px) {
   .grid thead th:nth-child(1),
   .grid tbody td:nth-child(1) { display: none; }
   .controls { flex-wrap: wrap; }
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* 改成 center 會完全垂直置中 */
-  min-height: 100vh;
-}
-
-.container {
-  margin-top: 60px;  /* 讓表格區往下 60px */
-}

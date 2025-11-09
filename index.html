@@ -4,18 +4,50 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RO Bonus 查詢</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20251106c" />
 </head>
 <body>
   <header class="topbar">
     <h1>RO Bonus 查詢</h1>
     <div class="controls">
       <input id="q" type="text" placeholder="輸入 bStr / 力量 / aspd…" />
-      <select id="cat">
-        <option value="">分類：全部</option>
-      </select>
+
+      <!-- 🔽 改良後分類選單 -->
+      <div class="select-wrap">
+        <select id="cat">
+          <option value="">分類：全部</option>
+          <option value="基本屬性">分類：基本屬性</option>
+          <option value="特性屬性">分類：特性屬性</option>
+          <option value="HP/SP/AP">分類：HP/SP/AP</option>
+          <option value="攻擊與防禦">分類：攻擊與防禦</option>
+          <option value="附加能力">分類：附加能力</option>
+          <option value="HP與SP">分類：HP與SP</option>
+          <option value="吸血與恢復">分類：吸血與恢復</option>
+          <option value="掉寶與金錢">分類：掉寶與金錢</option>
+          <option value="防禦與免疫">分類：防禦與免疫</option>
+        </select>
+        <svg class="arrow" viewBox="0 0 24 24" width="16" height="16">
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            d="M6 9l6 6 6-6" />
+        </svg>
+      </div>
+
+      <!-- 🔽 新增來源選單 -->
+      <div class="select-wrap">
+        <select id="src">
+          <option value="">來源：全部</option>
+          <option value="rAthena">來源：rAthena</option>
+          <option value="BRA">來源：BRA</option>
+          <option value="Panda">來源：Panda</option>
+        </select>
+        <svg class="arrow" viewBox="0 0 24 24" width="16" height="16">
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            d="M6 9l6 6 6-6" />
+        </svg>
+      </div>
+
       <label class="chk">
-        <input id="full" type="checkbox" />
+        <input id="full" type="checkbox" checked />
         全域搜尋（名稱＋說明）
       </label>
     </div>
@@ -30,6 +62,7 @@
             <th>指令 / 名稱</th>
             <th>效果說明</th>
             <th style="width:140px">分類</th>
+            <th style="width:120px">來源</th>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -40,29 +73,22 @@
 
   <footer class="footer">
     <span id="count">0</span> 筆
+    <span class="credit">Made by Nori</span>
   </footer>
 
-  <script src="bonus.js"></script>
+  <script src="bonus.js?v=20251106c"></script>
   <script>
-    // —— 資料準備 ——
     const data = (typeof BONUSES !== "undefined" ? BONUSES : []).map((it, i) => ({
       id: it.id ?? (i + 1),
       name: it.name || "",
       desc: it.desc || "",
-      category: it.category || ""
+      category: it.category || "",
+      source: it.source || ""
     }));
 
-    // 自動填分類
-    const cats = [...new Set(data.map(d => d.category).filter(Boolean))].sort();
-    const catSel = document.querySelector("#cat");
-    cats.forEach(c => {
-      const opt = document.createElement("option");
-      opt.value = c; opt.textContent = c;
-      catSel.appendChild(opt);
-    });
-
-    // 篩選
     const q = document.querySelector("#q");
+    const catSel = document.querySelector("#cat");
+    const srcSel = document.querySelector("#src");
     const full = document.querySelector("#full");
     const tbody = document.querySelector("#tbody");
     const empty = document.querySelector("#empty");
@@ -84,6 +110,7 @@
           <td class="mono">${highlight(r.name, kw)}</td>
           <td>${highlight(r.desc, kw)}</td>
           <td>${r.category || "-"}</td>
+          <td>${r.source || "-"}</td>
         `;
         tbody.appendChild(tr);
       });
@@ -94,27 +121,39 @@
     function applyFilter() {
       const kw = norm(q.value);
       const cat = catSel.value;
+      const src = srcSel.value;
       let rows = data;
 
       if (cat) rows = rows.filter(r => r.category === cat);
+      if (src) rows = rows.filter(r => r.source === src);
+
       if (kw) {
+        const kwLower = kw.toLowerCase();
+        const kwNorm = kw.normalize('NFKC');
         rows = rows.filter(r => {
-          const inName = norm(r.name).includes(kw);
-          const inDesc = norm(r.desc).includes(kw);
-          return full.checked ? (inName || inDesc) : inName;
+          const n = norm(r.name);
+          const d = norm(r.desc);
+          const hit = (
+            n.includes(kwNorm) || d.includes(kwNorm) ||
+            n.toLowerCase().includes(kwLower) || d.toLowerCase().includes(kwLower)
+          );
+          return full.checked ? hit : (n.includes(kwNorm) || n.toLowerCase().includes(kwLower));
         });
       }
       render(rows, kw);
     }
 
-    // 事件
     let t = 0;
     q.addEventListener("input", () => { clearTimeout(t); t = setTimeout(applyFilter, 120); });
     catSel.addEventListener("change", applyFilter);
+    srcSel.addEventListener("change", applyFilter);
     full.addEventListener("change", applyFilter);
 
-    // 首次渲染
-    applyFilter();
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+      full.checked = true;
+      applyFilter();
+    });
   </script>
 </body>
 </html>
