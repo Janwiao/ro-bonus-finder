@@ -217,7 +217,7 @@ footer.footer {
   display: block;
   text-align: right; /* 文字靠右 */
   margin-right: 20px; /* 與右邊保留距離 */
-  font-size: 15px;
+  font-size: 30px;
   color: rgba(215, 180, 210, 0.75);
   text-shadow: 0 0 6px rgba(88, 166, 255, 0.35);
   transition: all .3s ease;
@@ -225,6 +225,35 @@ footer.footer {
 }
 
 .credit:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(88, 166, 255, 0.6);
+}
+/* 簽名優化（左上＋右上顯示） */
+.credit2 {
+  position: fixed;
+  top: 3px;
+  font-size: 20px;
+  color: rgba(215, 180, 210, 0.75);
+  text-shadow: 0 0 6px rgba(88, 166, 255, 0.35);
+  transition: all .3s ease;
+  letter-spacing: 0.3px;
+  z-index: 999;
+  user-select: none;
+  /*pointer-events: none;  避免擋點擊 */
+  pointer-events: auto;
+  cursor: default;
+}
+/* 左上角 */
+.credit2.left {
+  left: 15px;
+  text-align: left;
+}
+/* 右上角 */
+.credit2.right {
+  right: 15px;
+  text-align: right;
+}
+.credit2:hover {
   color: var(--accent);
   text-shadow: 0 0 8px rgba(88, 166, 255, 0.6);
 }

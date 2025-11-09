@@ -1901,4 +1901,903 @@ const BONUSES = [
   "category": "狀態與其他控制",
   "source": "rAthena"
 },
+// ====================
+// BRA 擴充
+// ====================
+// bonus2 bMiscAddEle,e,x;
+{
+  "name": "bonus2 bMiscAddEle,e,x;",
+  "desc": "當使用混合攻擊時, 對 e 屬性的對象增加 x% 傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bMiscAddRace,r,x;
+{
+  "name": "bonus2 bMiscAddRace,r,x;",
+  "desc": "當使用混合攻擊時, 對 r 種族的對象增加 x% 傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bMiscAddClass,c,x;
+{
+  "name": "bonus2 bMiscAddClass,c,x;",
+  "desc": "當使用混合攻擊時, 對 c 類型的對象增加 x% 傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bMiscAddSize,s,x;
+{
+  "name": "bonus2 bMiscAddSize,s,x;",
+  "desc": "當使用混合攻擊時, 對 s 體型的對象增加 x% 傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bAddDamageTaken,n;
+{
+  "name": "bonus bAddDamageTaken,n;",
+  "desc": "在魔物的 DamageTaken 基礎上增加相應的數值(對有DamageTaken的魔物才會生效, 且無法超出100%變為增傷)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bIgnoreSkill,sk;
+{
+  "name": "bonus bIgnoreSkill,sk;",
+  "desc": "當被 sk技能 作為目標時, 使技能無效化(包換輔助或減益狀態)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSkillPerHpAtk,sk,n,r;
+{
+  "name": "bonus3 bSkillPerHpAtk,sk,n,r;",
+  "desc": "當使用 sk 技能攻擊時, r/10% 的概率增加對方HP的 n% 血量傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bHawkRush,n;
+{
+  "name": "bonus bHawkRush,n;",
+  "desc": "普通攻擊時獵鷹出擊概率 + n",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bHawkRushRate,n;
+{
+  "name": "bonus bHawkRushRate,n;",
+  "desc": "普通攻擊時獵鷹出擊概率 + n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bWugStrike,n;
+{
+  "name": "bonus bWugStrike,n;",
+  "desc": "普通攻擊時狼突擊概率 + n",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bWugStrikeRate,n;
+{
+  "name": "bonus bWugStrikeRate,n;",
+  "desc": "普通攻擊時狼突擊概率 + n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bArmorEleWhenHit,e1,e2,n;
+{
+  "name": "bonus3 bArmorEleWhenHit,e1,e2,n;",
+  "desc": "受到 e1 屬性攻擊時, 防禦屬性將按照 e2 屬性等級 n 計算最終傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus4 bEnergyShieldWhenHit,r,n,t,x;
+{
+  "name": "bonus4 bEnergyShieldWhenHit,r,n,t,x;",
+  "desc": "受到攻擊時 r/10% 的概率獲得 血量為 n 時長為 t 冷卻時間為 x 的能量護罩 (可以抵消任何傷害, t 為毫秒)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus4 bEnergyShieldWhenLess,r,n,t,x;
+{
+  "name": "bonus4 bEnergyShieldWhenLess,r,n,t,x;",
+  "desc": "當自身血量低於 r% 時獲得 血量為 n 時長為 t 冷卻時間為 x 的能量護罩 (可以抵消任何傷害, t 為毫秒)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSubSkillRate,sk,r;
+{
+  "name": "bonus2 bSubSkillRate,sk,r;",
+  "desc": "當被sk技能攻擊時, 技能傷害 - r%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bMaxPainDefRate,r;
+{
+  "name": "bonus bMaxPainDefRate,r;",
+  "desc": "當被極限痛苦(NPC_MAXPAIN)傷害反射時, 傷害 - r/10%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bExpAddRace2,rc2,n;
+{
+  "name": "bonus2 bExpAddRace2,rc2,n;",
+  "desc": "當殺死 rc2 種族魔物時, 經驗提升 n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bDropAddRace2,rc2,n;
+{
+  "name": "bonus2 bDropAddRace2,rc2,n;",
+  "desc": "當殺死 rc2 種族魔物時, 掉率提升 n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillUseHP,sk,n;
+{
+  "name": "bonus2 bSkillUseHP,sk,n;",
+  "desc": "減少技能sk的HP消耗 + n 可用負數增加消耗",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillUseHPrate,sk,n;
+{
+  "name": "bonus2 bSkillUseHPrate,sk,n;",
+  "desc": "減少技能sk的HP消耗 + n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillUseAP,sk,n;
+{
+  "name": "bonus2 bSkillUseAP,sk,n;",
+  "desc": "減少技能sk的AP消耗 + n 可用負數增加消耗",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillUseAPrate,sk,n;
+{
+  "name": "bonus2 bSkillUseAPrate,sk,n;",
+  "desc": "減少技能sk的AP消耗 + n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bAPGainValue,n;
+{
+  "name": "bonus bAPGainValue,n;",
+  "desc": "以近距離物理攻擊殺死魔物時得到 n AP",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bLongAPGainValue,n;
+{
+  "name": "bonus bLongAPGainValue,n;",
+  "desc": "以遠距離物理攻擊殺死魔物時得到 n AP",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bMagicAPGainValue,n;
+{
+  "name": "bonus bMagicAPGainValue,n;",
+  "desc": "以魔法攻擊殺死魔物時得到 n AP",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bMagicHPDrainRate,x,n;
+{
+  "name": "bonus2 bMagicHPDrainRate,x,n;",
+  "desc": "以魔法攻擊時 x/10 % 幾率把傷害的 n/10% 回復到HP",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bMagicSPDrainRate,x,n;
+{
+  "name": "bonus2 bMagicSPDrainRate,x,n;",
+  "desc": "以魔法攻擊時 x/10 % 幾率把傷害的 n/10% 回復到SP",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bItemDelay,i,n;
+{
+  "name": "bonus2 bItemDelay,i,n;",
+  "desc": "為指定物品 i 增加使用後延遲 n 毫秒, 可用負數減少延遲",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bMdefRatioMatkRace,r;
+{
+  "name": "bonus bMdefRatioMatkRace,r;",
+  "desc": "敵人的 Mdef越高, 對 r 種族的敵人的魔法傷害越高",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bMdefRatioMatkEle,e;
+{
+  "name": "bonus bMdefRatioMatkEle,e;",
+  "desc": "敵人的 Mdef越高, 對 e 屬性的敵人的魔法傷害越高",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bMdefRatioMatkClass,c;
+{
+  "name": "bonus bMdefRatioMatkClass,c;",
+  "desc": "敵人的 Mdef越高, 對 c 階級的敵人的魔法傷害越高",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bAddItemTypeDropRate,t,n;
+{
+  "name": "bonus2 bAddItemTypeDropRate,t,n;",
+  "desc": "當殺死魔物掉落道具時, 物品類型 t 的道具掉落概率增加 n/10%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bAddRaceDropRate,r,n;
+{
+  "name": "bonus2 bAddRaceDropRate,r,n;",
+  "desc": "當殺死魔物掉落道具時, 魔物種族 r 的道具掉落概率增加 n/10%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bAddClassDropRate,c,n;
+{
+  "name": "bonus2 bAddClassDropRate,c,n;",
+  "desc": "當殺死魔物掉落道具時, 魔物類別 c 的道具掉落概率增加 n/10%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bWeaponAtkEle,e,x;
+{
+  "name": "bonus2 bWeaponAtkEle,e,x;",
+  "desc": "當使用 e 屬性物理攻擊時, 物理攻擊力 + n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus4 bSkillForAOE,sk,range,n,r;
+{
+  "name": "bonus4 bSkillForAOE,sk,range,n,r;",
+  "desc": "使用sk技能時, 有r(千分率)的幾率對range範圍內的n個目標使用同樣的技能.",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bWeaponAddDamage,n;
+{
+  "name": "bonus bWeaponAddDamage,n;",
+  "desc": "普通攻擊或武器技能攻擊時增加 n 的固定傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bMagicAddDamage,n;
+{
+  "name": "bonus bMagicAddDamage,n;",
+  "desc": "魔法技能攻擊時增加 n 的固定傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bMiscAddDamage,n;
+{
+  "name": "bonus bMiscAddDamage,n;",
+  "desc": "混合技能攻擊時增加 n 的固定傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bAddDamage,bf,n;
+{
+  "name": "bonus2 bAddDamage,bf,n;",
+  "desc": "當玩家使用 bf 攻擊時, 增加 n 的固定傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bAddDamagerate,bf,n;
+{
+  "name": "bonus2 bAddDamagerate,bf,n;",
+  "desc": "當玩家使用 bf 攻擊時, 增加 n% 的固定傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bAddMastery,n;
+{
+  "name": "bonus bAddMastery,n;",
+  "desc": "增加掌控傷害 n, 例斧修煉額外增加等級 * 5傷害 bonus bAddMastery,5*getskilllv(NC_TRAININGAXE);",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bAddCartMaxWeight,n;
+{
+  "name": "bonus bAddCartMaxWeight,n;",
+  "desc": "玩家手推車負重上限增加 n (每10點增加1負重)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bAddWeight,n;
+{
+  "name": "bonus bAddWeight,n;",
+  "desc": "玩家負重增加 n, 非負重上限 (每10點增加1重量)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSkillDamage,sk,lv,n;
+{
+  "name": "bonus3 bSkillDamage,sk,lv,n;",
+  "desc": "為lv等級的sk技能增加n的固定傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bDamageReturn,bf,r,n;
+{
+  "name": "bonus3 bDamageReturn,bf,r,n;",
+  "desc": "當玩家受到 bf 攻擊時有 r/10% 的概率反射 n% 的傷害 (不反射地面魔法技能, 反射不觸發攻擊事件, 類似於bAutoSpell不會被觸發)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bDamageReturnWithGroup,bf,r,n;
+{
+  "name": "bonus3 bDamageReturnWithGroup,bf,r,n;",
+  "desc": "當玩家受到 bf 攻擊時有 r/10% 的概率反射 n% 的傷害 (反射地面魔法技能  , 反射不觸發攻擊事件, 類似於bAutoSpell不會被觸發)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bDamageDrain,bf,r,n;
+{
+  "name": "bonus3 bDamageDrain,bf,r,n;",
+  "desc": "當玩家受到 bf 攻擊時有 r/10% 的概率吸收 n 的傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bDamageDrainRate,bf,r,n;
+{
+  "name": "bonus3 bDamageDrainRate,bf,r,n;",
+  "desc": "當玩家受到 bf 攻擊時有 r/10% 的概率吸收 n/1000% 的傷害",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bDamageFix,r,n;
+{
+  "name": "bonus2 bDamageFix,r,n;",
+  "desc": "玩家傷害限制在最小為 r, 最大為 n, 如果 r 或 n 為 0 則忽略限制",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillTreeCooldownRate,jobid,n;
+{
+  "name": "bonus2 bSkillTreeCooldownRate,jobid,n;",
+  "desc": "職業技能公共技能延遲按百分比調整",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillTreeCooldown,jobid,n;
+{
+  "name": "bonus2 bSkillTreeCooldown,jobid,n;",
+  "desc": "職業技能公共技能延遲調整",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillTreeDelayRate,jobid,n;
+{
+  "name": "bonus2 bSkillTreeDelayRate,jobid,n;",
+  "desc": "職業技能獨立技能延遲按百分比調整",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillTreeDelay,jobid,n;
+{
+  "name": "bonus2 bSkillTreeDelay,jobid,n;",
+  "desc": "職業技能獨立技能延遲調整",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillStatusLimit,sk,n;
+{
+  "name": "bonus2 bSkillStatusLimit,sk,n;",
+  "desc": "技能 sk 在計入屬性值最大值限制為 n (屬性值包含 str\agi\vit\dex\luk\pow\sta\wis\spl\con\crt)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bSkillIgnoreDef,sk;
+{
+  "name": "bonus bSkillIgnoreDef,sk;",
+  "desc": "技能 sk 無視物理和魔法防禦(只能在服務版中使用)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bSkillIgnoreFree,sk;
+{
+  "name": "bonus bSkillIgnoreFree,sk;",
+  "desc": "技能 sk 無視迴避(只能在服務版中使用)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bSkillIgnoreEle,sk;
+{
+  "name": "bonus bSkillIgnoreEle,sk;",
+  "desc": "技能 sk 無視屬性修正(包含卡片對屬性的修正)(只能在服務版中使用)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bSkillIgnoreDefCard,sk;
+{
+  "name": "bonus bSkillIgnoreDefCard,sk;",
+  "desc": "技能 sk 無視卡片修正(只能在服務版中使用)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bSkillCanCritical,sk;
+{
+  "name": "bonus bSkillCanCritical,sk;",
+  "desc": "技能 sk 可以暴擊, 只對物理技能有效(例: 銳利射擊)(只能在服務版中使用)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillUnitNoOverlap,sk,n;
+{
+  "name": "bonus2 bSkillUnitNoOverlap,sk,n;",
+  "desc": "技能 sk 設置地面疊加, n=1時關閉疊加 n=0時開啟疊加(例: 暴風雪, 覆蓋 skill_db.yml 中的配置)(只能在服務版中使用)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillUnitAddInterval,sk,n;
+{
+  "name": "bonus2 bSkillUnitAddInterval,sk,n;",
+  "desc": "技能 sk 增加地面技能攻擊間隔(例: 暴風雪, 1秒攻擊10次)(只能在服務版中使用)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillUnitAddDuration,sk,n;
+{
+  "name": "bonus2 bSkillUnitAddDuration,sk,n;",
+  "desc": "技能 sk 增加地面技能持續時間(例: 暴風雪, 增加到30秒, 時間延長後缺少技能動畫)(只能在服務版中使用)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillUnitAddMaxCount,sk,n;
+{
+  "name": "bonus2 bSkillUnitAddMaxCount,sk,n;",
+  "desc": "技能 sk 增加地面最大釋放數量(例: 火柱攻擊)(只能在服務版中使用)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bReborn,r,n;
+{
+  "name": "bonus2 bReborn,r,n;",
+  "desc": "當玩家死亡時有 r% 的概率復活並恢復 n% 的血量",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bBlockStatus,x,n;
+{
+  "name": "bonus2 bBlockStatus,x,n;",
+  "desc": "固定玩家屬性 x 為 n",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bCooldown,n;
+{
+  "name": "bonus bCooldown,n;",
+  "desc": "技能獨立延遲時間 + n",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bCooldownrate,n;
+{
+  "name": "bonus bCooldownrate,n;",
+  "desc": "技能獨立延遲時間 + n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bMaxASPD,n;
+{
+  "name": "bonus bMaxASPD,n;",
+  "desc": "修改ASPD上限(無視CONF中的配置)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bDefSize,s;
+{
+  "name": "bonus bDefSize,s;",
+  "desc": "修改體型大小為 s",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bDefRace,r;
+{
+  "name": "bonus bDefRace,r;",
+  "desc": "修改種族為 r",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bDefEleLevel,n;
+{
+  "name": "bonus bDefEleLevel,n;",
+  "desc": "修改防禦屬性等級為 n",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSkillItemFix,sk,iid,n;
+{
+  "name": "bonus3 bSkillItemFix,sk,iid,n;",
+  "desc": "技能 sk 消耗的物品ID iid 增加 n 個(n可以為負數減少消耗)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bRegen,hp,sp,t;
+{
+  "name": "bonus3 bRegen,hp,sp,t;",
+  "desc": "每隔 t 毫秒, 恢復 HP 和 SP (不覆蓋, 獨立運算)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bRegenPercent,hp,sp,t;
+{
+  "name": "bonus3 bRegenPercent,hp,sp,t;",
+  "desc": "每隔 t 毫秒, 按百分比恢復 HP 和 SP(不覆蓋, 獨立運算)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus4 bRegen,hp,sp,ap,t;
+{
+  "name": "bonus4 bRegen,hp,sp,ap,t;",
+  "desc": "每隔 t 毫秒, 恢復 HP \ SP 和 ap (不覆蓋, 獨立運算)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus4 bRegenPercent,hp,sp,ap,t;
+{
+  "name": "bonus4 bRegenPercent,hp,sp,ap,t;",
+  "desc": "每隔 t 毫秒, 按百分比恢復 HP \ SP 和 ap (不覆蓋, 獨立運算)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bFixedCastAddRate,n;
+{
+  "name": "bonus bFixedCastAddRate,n;",
+  "desc": "固定詠唱時間 + n%(可累加)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bMultiDamageRate,bf,r,n;
+{
+  "name": "bonus3 bMultiDamageRate,bf,r,n;",
+  "desc": "當玩家使用 bf 攻擊時, 有 r/10% 的概率使傷害增加 n% 倍",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillCritical,sk,r;
+{
+  "name": "bonus2 bSkillCritical,sk,r;",
+  "desc": "當玩家使用 sk 攻擊時, 有 r/10% 的概率暴擊並顯示藍字傷害 (sk 為 -1 時增加所有技能暴擊概率)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bSkillCritAtkRate,n;
+{
+  "name": "bonus bSkillCritAtkRate,n;",
+  "desc": "技能暴擊傷害倍率 + n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillCritAtkRate,sk,n;
+{
+  "name": "bonus2 bSkillCritAtkRate,sk,n;",
+  "desc": "當使用 sk 技能時, 技能暴擊傷害倍率 + n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillCritFlagRate,bf,n;
+{
+  "name": "bonus2 bSkillCritFlagRate,bf,n;",
+  "desc": "當使用 bf 類型的技能時, 技能暴擊傷害倍率 + n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillAddDiv,sk,div;
+{
+  "name": "bonus2 bSkillAddDiv,sk,div;",
+  "desc": "技能 sk 打擊段數增加 div",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSkillAddDiv,sk,min,max;
+{
+  "name": "bonus3 bSkillAddDiv,sk,min,max;",
+  "desc": "技能 sk 打擊段數增加 min 至 max",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus4 bSkillAddDiv,sk,div,r,rate;
+{
+  "name": "bonus4 bSkillAddDiv,sk,div,r,rate;",
+  "desc": "技能 sk r/10% 的概率打擊段數增加 div 並且傷害倍率增加 rate, 當 rate 為 0 時傷害根據段數修正",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillChangeType,sk,bf;
+{
+  "name": "bonus2 bSkillChangeType,sk,bf;",
+  "desc": "修改技能 sk 攻擊類型為 bf",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bIgnoreMdefRaceVal,r,n;
+{
+  "name": "bonus2 bIgnoreMdefRaceVal,r,n;",
+  "desc": "無視 r 種族 n 點魔法防禦力",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bIgnoreMdefClassVal,c,n;
+{
+  "name": "bonus2 bIgnoreMdefClassVal,c,n;",
+  "desc": "無視 c 類別魔物 n 點魔法防禦力",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bIgnoreDefRaceVal,r,n;
+{
+  "name": "bonus2 bIgnoreDefRaceVal,r,n;",
+  "desc": "無視 r 種族 n 點魔法防禦力",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bIgnoreDefClassVal,c,n;
+{
+  "name": "bonus2 bIgnoreDefClassVal,c,n;",
+  "desc": "無視 c 類別魔物 n 點魔法防禦力",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bIgnoreWhiteImprison,n;
+{
+  "name": "bonus bIgnoreWhiteImprison,n;",
+  "desc": "無視白色監獄, n無意義",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bIgnoreStatusImmune,n;
+{
+  "name": "bonus bIgnoreStatusImmune,n;",
+  "desc": "無視對方免疫狀態的抗性 n/10% (對 MD_STATUSIMMUNE \ MD_MVP \ 基礎屬性抗性)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bIgnoreStatusImmune,sc,n;
+{
+  "name": "bonus2 bIgnoreStatusImmune,sc,n;",
+  "desc": "無視對方 sc 免疫狀態的抗性 n/10% (對 MD_STATUSIMMUNE \ MD_MVP \ 基礎屬性抗性)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bAddRate,mask,x,bf;
+{
+  "name": "bonus3 bAddRate,mask,x,bf;",
+  "desc": "使用 bf 攻擊時, 增加 mask 對象的 x% 點傷害(mask 標記通過 string2unitmask 腳本指令獲取, 可以直接寫數字提升相應速度)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSubRate,mask,x,bf;
+{
+  "name": "bonus3 bSubRate,mask,x,bf;",
+  "desc": "使用 bf 攻擊時, 減少 mask 對象的 x/100% 點傷害(注意:萬分率, mask 標記通過 string2unitmask 腳本指令獲取, 可以直接寫數字提升相應速度)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bAddDamage,mask,x,bf;
+{
+  "name": "bonus3 bAddDamage,mask,x,bf;",
+  "desc": "使用 bf 攻擊時, 增加 mask 對象的 x 點傷害(mask 標記通過 string2unitmask 腳本指令獲取, 可以直接寫數字提升相應速度)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSubDamage,mask,x,bf;
+{
+  "name": "bonus3 bSubDamage,mask,x,bf;",
+  "desc": "使用 bf 攻擊時, 減少 mask 對象的 x 點傷害(mask 標記通過 string2unitmask 腳本指令獲取, 可以直接寫數字提升相應速度)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSubFinalRate,mask,x,bf;
+{
+  "name": "bonus3 bSubFinalRate,mask,x,bf;",
+  "desc": "使用 bf 攻擊時, 減少 mask 對象的 x/100% 點傷害(注意:萬分率, 在最終傷害上全段修正, mask 標記通過 string2unitmask 腳本指令獲取, 可以直接寫數字提升相應速度)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bAddFinalRate,mask,x,bf;
+{
+  "name": "bonus3 bAddFinalRate,mask,x,bf;",
+  "desc": "使用 bf 攻擊時, 增加 mask 對象的 x% 點傷害(在最終傷害上全段修正, mask 標記通過 string2unitmask 腳本指令獲取, 可以直接寫數字提升相應速度)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bAddFinalDamage,mask,x,bf;
+{
+  "name": "bonus3 bAddFinalDamage,mask,x,bf;",
+  "desc": "使用 bf 攻擊時, 增加 mask 對象的 x 點傷害(在最終傷害上全段修正, mask 標記通過 string2unitmask 腳本指令獲取, 可以直接寫數字提升相應速度)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSubFinalDamage,mask,x,bf;
+{
+  "name": "bonus3 bSubFinalDamage,mask,x,bf;",
+  "desc": "使用 bf 攻擊時, 減少 mask 對象的 x 點傷害(在最終傷害上全段修正, mask 標記通過 string2unitmask 腳本指令獲取, 可以直接寫數字提升相應速度)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bAddFinalRace2Rate,rc2,x,bf;
+{
+  "name": "bonus3 bAddFinalRace2Rate,rc2,x,bf;",
+  "desc": "使用 bf 攻擊時, 增加 rc2 種族的 x% 點傷害(在最終傷害上全段修正)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSubFinalRace2Rate,rc2,x,bf;
+{
+  "name": "bonus3 bSubFinalRace2Rate,rc2,x,bf;",
+  "desc": "使用 bf 攻擊時, 減少 rc2 種族的 x/100% 點傷害(在最終傷害上全段修正)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bAddSkillArea,sk,n;
+{
+  "name": "bonus2 bAddSkillArea,sk,n;",
+  "desc": "增加 sk 技能 n 格範圍, 可用於濺射或範圍技能",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bAddSkillRange,sk,n;
+{
+  "name": "bonus2 bAddSkillRange,sk,n;",
+  "desc": "增加 sk 技能 n 格攻擊距離",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillClearCooldown,sk,n;
+{
+  "name": "bonus2 bSkillClearCooldown,sk,n;",
+  "desc": "使用 sk 技能時有 n/10% 概率重置本技能的延遲",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillToAround,sk,r;
+{
+  "name": "bonus2 bSkillToAround,sk,r;",
+  "desc": "技能 sk 變為群體技能, 自動選擇自身 r 格範圍內的所有敵對目標進行攻擊",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillToGround,sk,r;
+{
+  "name": "bonus2 bSkillToGround,sk,r;",
+  "desc": "技能 sk 變為地面技能, 並攻擊 r 格範圍內的所有敵對目標",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSkillToAround,sk,r,n;
+{
+  "name": "bonus3 bSkillToAround,sk,r,n;",
+  "desc": "技能 sk 變為群體技能, 自動選擇 r 格範圍內的最多 n 個敵對目標進行攻擊",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSkillToGround,sk,r,n;
+{
+  "name": "bonus3 bSkillToGround,sk,r,n;",
+  "desc": "技能 sk 變為地面技能, 並攻擊 r 格範圍內的最多 n 個敵對目標",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bSkillNoPartner,sk;
+{
+  "name": "bonus bSkillNoPartner,sk;",
+  "desc": "使用 sk 技能時, 不再需要同伴輔助(合奏類技能等)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillNoSpecial,sk,bitmask;
+{
+  "name": "bonus2 bSkillNoSpecial,sk,bitmask;",
+  "desc": "移除技能 sk 的特殊條件(bitmask 為 掩碼類型可疊加, bitmask 默認為 1)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bSkillNoRequire,bitmask;
+{
+  "name": "bonus bSkillNoRequire,bitmask;",
+  "desc": "移除技能消耗, bitmask 為 掩碼類型(可疊加)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bSkillNoRequire,sk,bitmask;
+{
+  "name": "bonus2 bSkillNoRequire,sk,bitmask;",
+  "desc": "移除技能 sk 的需求條件, bitmask 為 掩碼類型(可疊加),",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bSkillNoRequireItem,iid;
+{
+  "name": "bonus bSkillNoRequireItem,iid;",
+  "desc": "移除技能對 iid 的物品消耗, 類似於 bSkillItemFix",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bNormalNoRequireAmmo;
+{
+  "name": "bonus bNormalNoRequireAmmo;",
+  "desc": "平射不消耗箭矢/彈藥等",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bSkillAttribute,sk,ele,n;
+{
+  "name": "bonus3 bSkillAttribute,sk,ele,n;",
+  "desc": "技能 sk 變為 ele 屬性(為避免帶寬消耗過大或特效卡客戶端, 每個技能最多顯示一次溫暖風特效, 優先級默認 0)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus4 bSkillAttribute,sk,ele,n,r;
+{
+  "name": "bonus4 bSkillAttribute,sk,ele,n,r;",
+  "desc": "技能 sk 變為 ele 屬性（r為優先級, 優先找符合條件並且 r 更大的作為優先條件更改屬性）",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bWeaponReturnDefRate,n;
+{
+  "name": "bonus bWeaponReturnDefRate,n;",
+  "desc": "受到物理反射傷害時, 傷害減少原來的 n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus bMagicReturnDefRate,n;
+{
+  "name": "bonus bMagicReturnDefRate,n;",
+  "desc": "受到魔法反射傷害時, 傷害減少原來的 n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus3 bStatusAddBonus,sc,bonus,n;
+{
+  "name": "bonus3 bStatusAddBonus,sc,bonus,n;",
+  "desc": "當自己擁有 sc 狀態的時候, 會增加 bonus 參數為 n",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus4 bStatusAddBonus,sc,bonus,r,n;
+{
+  "name": "bonus4 bStatusAddBonus,sc,bonus,r,n;",
+  "desc": "當自己擁有 sc 狀態的時候, 會增加 bonus 參數為 r,n",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus5 bStatusAddBonus,sc,bonus,x,r,n;
+{
+  "name": "bonus5 bStatusAddBonus,sc,bonus,x,r,n;",
+  "desc": "當自己擁有 sc 狀態的時候, 會增加 bonus 參數為 x,r,n",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus4 bStatusAddDamage,sc,n,r,bf;
+{
+  "name": "bonus4 bStatusAddDamage,sc,n,r,bf;",
+  "desc": "當對方擁有 sc 狀態的時候, 使用 bf 攻擊時有 r/10% 的概率傷害增加 n",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus4 bStatusAddDamageRate,sc,n,r,bf;
+{
+  "name": "bonus4 bStatusAddDamageRate,sc,n,r,bf;",
+  "desc": "當對方擁有 sc 狀態的時候, 使用 bf 攻擊時有 r/10% 的概率傷害增加 n%",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus5 bAddStatusVal,sc,val1,val2,val3,val4;
+{
+  "name": "bonus5 bAddStatusVal,sc,val1,val2,val3,val4;",
+  "desc": "賦予狀態時, 參數分別累加 val1, val2, val3, val4",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
+// bonus2 bStatusIgnoreState,sc,scs;
+{
+  "name": "bonus2 bStatusIgnoreState,sc,scs;",
+  "desc": "移除狀態對基礎狀態的影響(status.yml中的States節點)",
+  "category": "BRA擴充",
+  "source": "BetterRA"
+},
 ];
